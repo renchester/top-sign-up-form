@@ -94,7 +94,9 @@
                   id="password"
                   name="password"
                   min="8"
+                  pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
                   required
+                  invalid
                 />
                 <span class="password--no-match">*Passwords do not match</span>
               </div>
@@ -105,7 +107,9 @@
                   id="confirm_password"
                   name="confirm_password"
                   min="8"
+                  pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
                   required
+                  invalid
                 />
               </div>
             </fieldset>
@@ -124,5 +128,7 @@
         </div>
       </div>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
