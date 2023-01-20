@@ -6,55 +6,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Playfair+Display&family=Archivo&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Sign-up form</title>
   </head>
   <body>
     <div class="container">
       <div class="sidebar">
-        <div class="sidebar--title"></div>
-        <div class="sidebar--credits"></div>
+        <div class="sidebar--overlay"></div>
+        <div class="sidebar--title">ENTER<br />YOUR<br />DREAM<br />WORLD</div>
+        <div class="sidebar--credits">
+          Photo by <a href="https://unsplash.com/@bykrystal">Krystal Ng</a> on
+          <a href="https://unsplash.com/">Unsplash</a>
+        </div>
       </div>
       <div class="main-content">
-        <div class="description"></div>
-        <div class="form">
-          <div class="form--label">
-            <p class="label label--1n"></p>
-            <p class="label label--2n"></p>
-          </div>
+        <div class="description">
+          <p class="label label--1n">
+            This is not a real online service! You know you need something like
+            this in your life to help you realize your deepest dreams. Sign up
+            <em>now</em> to get started.
+          </p>
+          <p class="label label--2n">You <em>know</em> you want to!</p>
+        </div>
+        <div class="form--container">
           <div class="form">
             <legend class="form--legend">Fill this form out!</legend>
             <fieldset class="fieldset--name">
-              <label for="first_name">First Name</label>
-              <input type="text" id="first_name" name="first_name" required />
-              <label for="last_name">Last Name</label>
-              <input type="text" id="last_name" name="last_name" />
+              <div class="wrapper wrapper--first-name">
+                <label for="first_name">First Name*</label>
+                <input
+                  type="text"
+                  id="first_name"
+                  name="first_name"
+                  placeholder="John"
+                  min="1"
+                  required
+                />
+              </div>
+              <div class="wrapper wrapper--last-name">
+                <label for="last_name">Last Name</label>
+                <input
+                  type="text"
+                  id="last_name"
+                  name="last_name"
+                  min="1"
+                  placeholder="Appleseed"
+                />
+              </div>
             </fieldset>
 
             <fieldset class="fieldset--contact-details">
-              <label for="email_add">Email</label>
-              <input type="text" id="email_add" name="email_add" required />
-              <label for="phone_number">Phone Number</label>
-              <input type="number" id="phone_number" name="phone_number" />
+              <div class="wrapper wrapper--email">
+                <label for="email_add">Email*</label>
+                <input
+                  type="text"
+                  id="email_add"
+                  name="email_add"
+                  placeholder="johnappleseed@website.com"
+                  pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+                  min="1"
+                  required
+                />
+              </div>
+              <div class="wrapper wrapper--phone-number">
+                <label for="phone_number">Phone Number</label>
+                <input
+                  type="number"
+                  id="phone_number"
+                  name="phone_number"
+                  min="1"
+                  placeholder="0917 123 4567"
+                />
+              </div>
             </fieldset>
 
             <fieldset class="fieldset--password">
-              <label for="password">Password</label>
-              <input type="password" id="password" name="password" required />
-              <label for="confirm_password">Confirm Password</label>
-              <input
-                type="password"
-                id="confirm_password"
-                name="confirm_password"
-                required
-              />
+              <div class="wrapper wrapper--password">
+                <label for="password">Password*</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  min="8"
+                  required
+                />
+                <span class="password--no-match">*Passwords do not match</span>
+              </div>
+              <div class="wrapper wrapper--confirm-password">
+                <label for="confirm_password">Confirm Password*</label>
+                <input
+                  type="password"
+                  id="confirm_password"
+                  name="confirm_password"
+                  min="8"
+                  required
+                />
+              </div>
             </fieldset>
+          </div>
 
+          <div class="form-btn--container">
             <button type="submit" class="btn btn--submit">
               Create Account
             </button>
-
-            <div class="alt--log-in container">
-              <span class="alt--log-in description">
+            <div class="alt--log-in alt--container">
+              <span class="alt--log-in alt--description">
                 Already have an account? <a href="#">Log in</a>
               </span>
             </div>
