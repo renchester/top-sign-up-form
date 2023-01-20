@@ -230,3 +230,94 @@
   text-underline-offset: 2px;
   color: var(--accent-color, green);
 }
+
+@media (max-width: 700px) {
+  .container {
+    height: auto;
+    flex-direction: column;
+    width: 100vw;
+  }
+
+  .sidebar {
+    height: clamp(150px, 15vh, 250px);
+    width: 100%;
+  }
+
+  .sidebar--title {
+    font-size: 1.5rem;
+    transform: skewY(-5deg);
+  }
+
+  .sidebar br {
+    display: none;
+  }
+
+  .sidebar--credits {
+    font-size: 0.5rem;
+    text-align: right;
+    margin-bottom: 0px;
+    padding: 5px;
+  }
+
+  .sidebar--credits a:link,
+  .sidebar--credits a:visited,
+  .sidebar--credits a {
+    text-underline-offset: 1px;
+    text-decoration-thickness: 1px;
+  }
+
+  .main-content {
+    --side-padding: 45px;
+    width: 100%;
+  }
+
+  .description {
+    font-size: 1.2rem;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .form {
+    padding: 45px var(--side-padding);
+  }
+
+  .form fieldset {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .wrapper {
+    width: 100%;
+  }
+
+  .wrapper input {
+    width: 90%;
+  }
+
+  .form-btn--container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 50px;
+  }
+
+  .btn--submit {
+    margin-top: 15px;
+    width: clamp(150px, 50%, 500px);
+  }
+
+  .alt--description,
+  .alt--description a,
+  .alt--description a:link {
+    text-align: center;
+    margin-left: 0px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .sidebar--title br:nth-child(2) {
+    display: inline;
+  }
+}
