@@ -110,6 +110,7 @@
 .form--container {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .form {
@@ -117,6 +118,7 @@
   padding: 20px var(--side-padding);
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 10px;
   box-shadow: 10px 1px 40px 1px rgba(0, 0, 0, 0.2);
 }
@@ -131,8 +133,9 @@
 
 .form fieldset {
   display: flex;
-  padding: 10px 0;
   gap: 45px;
+  padding: 10px 0;
+  width: clamp(500px, 100%, 1500px);
 }
 
 .form fieldset:last-child {
