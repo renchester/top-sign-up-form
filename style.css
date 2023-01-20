@@ -20,29 +20,52 @@
 .sidebar {
   background: url(img/jungle-krystal-ng.jpg);
   background-size: cover;
-  width: clamp(100px, 35%, 600px);
+  width: clamp(200px, 40%, 600px);
   height: 100%;
   color: white;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
   font-size: 0.8rem;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .sidebar--overlay {
+  position: absolute;
   background-color: rgba(0, 0, 0);
   opacity: 0.35;
   height: 100%;
+  width: 100%;
+}
+
+.sidebar--title {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 1000;
+  letter-spacing: 0.5ch;
+  line-height: 3.5rem;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 5px;
+  z-index: 1;
+  transform: skewY(-15deg);
+  text-align: center;
 }
 
 .sidebar--credits {
   position: absolute;
   bottom: 0;
   width: 100%;
+  margin-bottom: 10px;
   padding: 10px;
   text-align: center;
+  font-family: 'Archivo', Arial, Helvetica, sans-serif, monospace;
+  letter-spacing: 1.1px;
 }
+
+.sidebar--credits a:link,
 .sidebar--credits a:visited,
 .sidebar--credits a {
   color: white;
@@ -54,25 +77,30 @@
 /* MAIN CONTENT */
 
 .main-content {
-  --side-padding: 40px;
+  --side-padding: 60px;
+  --background-color: rgb(247, 247, 247);
+  --accent-color: rgb(0, 145, 0);
+
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0;
-  gap: 20px;
-  background-color: rgb(247, 247, 247);
+  gap: 30px;
+  background-color: var(--background-color), white;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .description {
   display: flex;
   flex-direction: column;
+  width: clamp(100px, 80%, 900px);
   gap: 12px;
   padding: 0 var(--side-padding);
-  width: clamp(100px, 90ch, 1000px);
+  font-family: 'Playfair Display', Arial, Helvetica, sans-serif, monospace;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 400;
+  letter-spacing: 0.5px;
 }
 
 .description em {
@@ -94,8 +122,10 @@
 }
 
 .form--legend {
+  font-family: 'Archivo', Arial, Helvetica, sans-serif, monospace;
   font-size: 1.2rem;
   font-weight: 600;
+  letter-spacing: 1px;
   margin: 15px 0;
 }
 
@@ -113,14 +143,90 @@
   display: flex;
   width: max(40%, 300px);
   flex-direction: column;
+  font-family: 'Nunito Sans', Arial, Helvetica, sans-serif, monospace;
+}
+
+.wrapper label {
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  color: rgb(39, 39, 39, 0.75);
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 
 .wrapper input {
-  border: 1px solid rgba(0, 0, 0, 0.233);
+  border: 1px solid rgba(0, 0, 0, 0.13);
+  border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.1) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.1) 0px 1px 3px -1px;
   padding: 8px 10px;
   width: clamp(100px, 100%, 500px);
+  transition: 0.1s;
+}
+
+.wrapper input:focus {
+  border: 0.5px solid rgba(56, 56, 56, 0.5);
+  box-shadow: rgba(50, 50, 93, 0.3) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  outline: 0;
+}
+
+/* .wrapper input:valid {
+  border-left: 5px solid var(--accent-color, green);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+} */
+
+.wrapper input[type='password']:invalid {
+  border: 1px solid red;
+}
+
+.password--no-match {
+  display: none;
+}
+
+.wrapper input[type='password']:invalid + .password--no-match {
+  display: block;
+  color: red;
+  font-size: 0.75rem;
+  margin-top: 3px;
 }
 
 .form-btn--container {
-  padding: 15px var(--side-padding);
+  margin-top: 30px;
+  padding: 0 var(--side-padding);
+}
+
+.btn--submit {
+  padding: 15px 35px;
+  background-color: var(--accent-color, , green);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  transition: 0.1s linear;
+}
+
+.btn--submit:active,
+.btn--submit:hover {
+  transform: scale(1.05);
+  /* transform-origin: top left; */
+}
+
+.alt--description {
+  font-family: 'Archivo', Arial, Helvetica, sans-serif, monospace;
+  letter-spacing: 1.1px;
+}
+
+.alt--description a,
+.alt--description a:link,
+.alt--description a:visited {
+  margin-left: 5px;
+  font-weight: 600;
+  text-underline-offset: 2px;
+  color: var(--accent-color, green);
 }
